@@ -57,7 +57,7 @@ def hello_world():
 
 
 @app.route('/save_msg', methods=['POST'])
-@crossdomain(origin='*')
+@crossdomain(origin='*', headers='Content-Type')
 def save_msg():
     if request.is_json:
         data = request.get_json()
