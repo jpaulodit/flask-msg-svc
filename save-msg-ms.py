@@ -56,7 +56,7 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/save_msg', methods=['POST'])
+@app.route('/save_msg', methods=['POST', 'OPTIONS'])
 @crossdomain(origin='*', headers='Content-Type')
 def save_msg():
     if request.is_json:
@@ -75,7 +75,7 @@ def save_msg():
     return ''
 
 
-@app.route('/get_msg_list', methods=['GET'])
+@app.route('/get_msg_list', methods=['GET', 'OPTIONS'])
 @crossdomain(origin='*')
 def get_messages():
     lecture_id = int(request.args.get('lecture_id', 0))
